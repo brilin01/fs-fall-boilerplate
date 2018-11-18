@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
 
 class App extends Component {
+  componentDidMount() {
+    // promise
+    axios
+    .get('/healthcheck')
+    .then(res => {
+      // Response from the API
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
   render() {
     return (
       <div className="App">
